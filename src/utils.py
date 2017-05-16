@@ -23,7 +23,7 @@ def convert_twitter_timedate(twitterdate, fromtimezone='UTC', totimezone='UTC'):
     # Convert time zone
     return utc.astimezone(to_zone)
 
-'''
+
     
 import os, pickle, fileinput, nltk, errno, time, pytz
 from functools import reduce
@@ -306,5 +306,3 @@ def pop_var():
 def alarm_when_finish():
     Beep(300, 2000)  # Sound alarm when code finishes
     
-    
-'''
