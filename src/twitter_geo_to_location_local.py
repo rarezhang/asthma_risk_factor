@@ -2,7 +2,8 @@
 convert geo to detailed address information
 input: output of twitter_mongo_geo.py
 
-use local ```photon``` server (10.128.195.35 server)
+use local ```photon``` server 
+too slow 
 """
 
 import urllib.request
@@ -10,7 +11,7 @@ import urllib.request
 # reverse lat long order 
 # geo list -> lat_lon str
 # coordinate list -> lon_lat str
-def coordinate(lon_lat):
+def lat_lon_order(lon_lat):
     """
     lon_lat to lat_lon
     """

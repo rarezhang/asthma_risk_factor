@@ -2,8 +2,14 @@
 utils
 """
 
-import datetime, time
+
+
+
+import os, pickle, fileinput, nltk, errno, time, pytz
 from dateutil import tz
+from functools import reduce
+from datetime import datetime
+from winsound import Beep 
 
 def convert_twitter_timedate(twitterdate, fromtimezone='UTC', totimezone='UTC'):
 
@@ -18,17 +24,14 @@ def convert_twitter_timedate(twitterdate, fromtimezone='UTC', totimezone='UTC'):
     date = time.strftime('%Y-%m-%d %H:%M:%S', time.strptime(twitterdate, '%a %b %d %H:%M:%S +0000 %Y'))
     from_zone = tz.gettz(fromtimezone)
     to_zone = tz.gettz(totimezone)
-    utc = datetime.datetime.strptime(date, '%Y-%m-%d %H:%M:%S')
+    utc = datetime.strptime(date, '%Y-%m-%d %H:%M:%S')
     utc = utc.replace(tzinfo=from_zone)
     # Convert time zone
     return utc.astimezone(to_zone)
 
 
     
-import os, pickle, fileinput, nltk, errno, time, pytz
-from functools import reduce
-from datetime import datetime
-from winsound import Beep    
+   
     
 ######################################################
 # decorator functions
